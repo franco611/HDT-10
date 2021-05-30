@@ -49,7 +49,7 @@ public class Main {
             e.printStackTrace();
         }
 
-
+        System.out.println("El grafo inicial es: ");
         grafito.impMatrix();
 
         int[][] origen = grafito.getMAT();
@@ -63,8 +63,6 @@ public class Main {
 
         Floyd floicito = new Floyd();
         floicito.floyd(copia);
-        System.out.println(Arrays.deepToString(origen));
-
 
         boolean bandera = true;
         while (bandera){
@@ -133,6 +131,7 @@ public class Main {
                 System.out.println("Ingrese el nombre de la segunda ciudad");
                 ciudad2 = s.nextLine();
                 System.out.println("Ingrese la distancia entre las ciudades.");
+                System.out.println("Para indicar que la ruta no existe ingrese 1000000000.");
                 valor = s.nextInt();
 
                 if(ciudades.contains(ciudad1)){
@@ -144,7 +143,8 @@ public class Main {
                             }
                         }
                         floicito.floyd(copia);
-                        System.out.println(Arrays.deepToString(copia));
+                        System.out.println("El nuevo grafo es: ");
+                        grafito.impMatrix();
 
 
 
